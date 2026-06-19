@@ -160,3 +160,8 @@ window.onload = function() {
     
     // Simulate network friendly - no heavy assets
     console.log('%cGlobalPay Pi - pidom8.pi ready (lightweight mode
+                script src="https://sdk.minepi.com/pi-sdk.js"></script>
+<script>
+  Pi.init({ version: "2.0", sandbox: true });
+</script>
+You may now run your app in the sandbox environment (https://sandbox.minepi.com),
