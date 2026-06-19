@@ -1,1 +1,172 @@
-index.html
+
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlobalPay Pi - pidom8.pi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="background"></div>
+    
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-globe"></i>
+                <span>GlobalPay Pi</span>
+            </div>
+            <div class="nav-links">
+                <a href="#" onclick="showSection('home')">Home</a>
+                <a href="#" onclick="showSection('send')">Send</a>
+                <a href="#" onclick="showSection('wallet')">Wallet</a>
+                <a href="#" onclick="showSection('vendors')">Vendors</a>
+                <a href="#" onclick="showSection('history')">History</a>
+            </div>
+            <div class="user-info">
+                <div class="balance" id="nav-balance">π 248.75</div>
+                <div class="profile">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HOME SECTION -->
+    <section id="home-section" class="section active">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Fast, Simple, Universal</h1>
+                <p class="tagline">Send &amp; receive money instantly worldwide with pidom8.pi</p>
+                <div class="cta-buttons">
+                    <button onclick="showSection('send')" class="btn-primary">Send Money Now</button>
+                    <button onclick="showSection('wallet')" class="btn-secondary">Open Wallet</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="features">
+            <h2>Why GlobalPay Pi?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Instant</h3>
+                    <p>Transactions in seconds</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-exchange-alt"></i>
+                    <h3>Auto Convert</h3>
+                    <p>Real-time currency conversion</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Multivendor</h3>
+                    <p>Pay any merchant worldwide</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Secure</h3>
+                    <p>Bank-grade encryption</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <h3>2.4M+</h3>
+                <p>Users</p>
+            </div>
+            <div class="stat-item">
+                <h3>98</h3>
+                <p>Countries</p>
+            </div>
+            <div class="stat-item">
+                <h3>&lt;0.5%</h3>
+                <p>Fees</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEND SECTION -->
+    <section id="send-section" class="section">
+        <div class="form-container">
+            <h2>Send Money</h2>
+            <div class="send-form">
+                <div class="input-group">
+                    <label>Recipient Username / Pi Address</label>
+                    <input type="text" id="recipient" placeholder="pidom8.pi or @username" value="merchant.store">
+                </div>
+                
+                <div class="input-group">
+                    <label>Amount (in your currency)</label>
+                    <div class="amount-input">
+                        <select id="send-currency">
+                            <option value="USD">$ USD</option>
+                            <option value="EUR">€ EUR</option>
+                            <option value="NGN">₦ NGN</option>
+                            <option value="PI" selected>π PI</option>
+                        </select>
+                        <input type="number" id="send-amount" value="25" step="0.01">
+                    </div>
+                </div>
+
+                <div class="conversion-info">
+                    <p>Recipient will receive: <strong id="receive-preview">≈ 25.00 π</strong></p>
+                </div>
+
+                <button onclick="sendMoney()" class="btn-primary full-btn">
+                    <i class="fas fa-paper-plane"></i> Send Now
+                </button>
+                
+                <p class="fee-info">Fee: <span class="low-fee">0.12 π</span> • Instant</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WALLET SECTION -->
+    <section id="wallet-section" class="section">
+        <div class="wallet-card">
+            <h2>Your Wallet</h2>
+            <div class="big-balance">
+                <span class="pi-symbol">π</span>
+                <span id="wallet-balance">248.75</span>
+            </div>
+            <p class="balance-usd">≈ $312.45 USD</p>
+            
+            <div class="wallet-actions">
+                <button onclick="showSection('send')" class="btn-primary">Send</button>
+                <button onclick="receiveMoney()" class="btn-secondary">Receive</button>
+            </div>
+        </div>
+        
+        <div class="recent-transactions">
+            <h3>Recent Activity</h3>
+            <div id="recent-list"></div>
+        </div>
+    </section>
+
+    <!-- VENDORS SECTION -->
+    <section id="vendors-section" class="section">
+        <h2>Multivendor Marketplace</h2>
+        <div class="vendors-grid" id="vendors-grid">
+            <!-- Populated by JS -->
+        </div>
+    </section>
+
+    <!-- HISTORY SECTION -->
+    <section id="history-section" class="section">
+        <h2>Transaction History</h2>
+        <div class="history-list" id="history-list">
+            <!-- Populated by JS -->
+        </div>
+    </section>
+
+    <!-- Toast -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
