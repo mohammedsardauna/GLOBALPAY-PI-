@@ -285,4 +285,83 @@ body {
 @media (max-width: 768px) {
     .nav-links {
         display: none;
-  
+        
+  https://sdk.minepi.com/pi-sdk.js
+
+https://sdk.minepi.com/pi-sdk.js
+script>
+Pi.init({ version: "2.0" });
+
+async function login() {
+  try {
+    const scopes = ['username', 'payments'];
+    const auth = await Pi.authenticate(scopes);
+    alert("Welcome " + auth.user.username);
+  } catch (err) {
+    console.log(err);
+  }
+}
+</script>
+</body>
+</html>
+
+js
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+  res.send('GlobalPay Pi Backend Running');
+});
+
+app.listen(3000, () => {
+  console.log('Server running on port 3000');
+});
+
+globalpay-pi/
+├── frontend/
+│   ├── index.html
+│   └── app.js
+├── backend/
+│   ├── server.js
+│   └── package.json
+└── README.md
+https://sdk.minepi.com/pi-sdk.js
+
+https://sdk.minepi.com/pi-sdk.js
+script>
+Pi.init({ version: "2.0" });
+
+async function login() {
+  try {
+    const scopes = ['username', 'payments'];
+    const auth = await Pi.authenticate(scopes);
+    alert("Welcome " + auth.user.username);
+  } catch (err) {
+    console.log(err);
+  }
+}
+</script>
+</body>
+</html>
+
+js
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+  res.send('GlobalPay Pi Backend Running');
+});
+
+app.listen(3000, () => {
+  console.log('Server running on port 3000');
+});
+
+globalpay-pi/
+├── frontend/
+│   ├── index.html
+│   └── app.js
+├── backend/
+│   ├── server.js
+│   └── package.json
+└── README.md
+    
