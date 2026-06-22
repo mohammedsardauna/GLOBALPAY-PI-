@@ -165,3 +165,6 @@ window.onload = function() {
   Pi.init({ version: "2.0", sandbox: true });
 </script>
 You may now run your app in the sandbox environment (https://sandbox.minepi.com),
+POST https://pidom8.pi/api/login
+POST https://pidom8.pi/api/approve
+POST https://pidom8.pi/api/complete
