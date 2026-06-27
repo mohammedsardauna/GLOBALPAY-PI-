@@ -1,5 +1,6 @@
-
-/* style.css */
+/* style.css (cleaned)
+   Styles for GlobalPay Pi demo
+*/
 * {
     margin: 0;
     padding: 0;
@@ -79,15 +80,9 @@ body {
     transition: color 0.3s;
 }
 
-.nav-links a:hover {
-    color: #00ffcc;
-}
+.nav-links a:hover { color: #00ffcc; }
 
-.user-info {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
+.user-info { display: flex; align-items: center; gap: 15px; }
 
 .balance {
     background: rgba(0, 255, 204, 0.15);
@@ -98,270 +93,46 @@ body {
     font-size: 0.95rem;
 }
 
-.profile {
-    font-size: 1.8rem;
-    cursor: pointer;
-}
+.profile { font-size: 1.8rem; cursor: pointer; }
 
-/* Sections */
-.section {
-    display: none;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+.section { display: none; padding: 2rem; max-width: 1200px; margin: 0 auto; }
+.section.active { display: block; animation: fadeIn 0.4s; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-.section.active {
-    display: block;
-    animation: fadeIn 0.4s;
-}
+.hero { text-align: center; padding: 6rem 2rem 4rem; }
+.hero h1 { font-size: 3.2rem; margin-bottom: 1rem; background: linear-gradient(90deg, #00ffcc, #ff00cc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.tagline { font-size: 1.35rem; max-width: 600px; margin: 0 auto 2rem; opacity: 0.9; }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
+.cta-buttons button { padding: 14px 32px; margin: 0 10px; border: none; border-radius: 50px; font-size: 1.1rem; cursor: pointer; transition: all 0.3s; }
+.btn-primary { background: linear-gradient(90deg, #00ffcc, #0099ff); color: #000; font-weight: 700; }
+.btn-secondary { background: rgba(255,255,255,0.15); color: white; border: 1px solid rgba(255,255,255,0.3); }
+.btn-primary:hover, .btn-secondary:hover { transform: translateY(-4px); }
+.full-btn { width: 100%; padding: 16px; font-size: 1.2rem; }
 
-/* Hero */
-.hero {
-    text-align: center;
-    padding: 6rem 2rem 4rem;
-}
+.features { padding: 3rem 2rem; text-align: center; }
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+.feature-card { background: rgba(255,255,255,0.08); padding: 2rem 1.5rem; border-radius: 20px; transition: transform 0.3s; }
+.feature-card:hover { transform: translateY(-10px); }
+.feature-card i { font-size: 2.8rem; margin-bottom: 1rem; color: #00ffcc; }
 
-.hero h1 {
-    font-size: 3.2rem;
-    margin-bottom: 1rem;
-    background: linear-gradient(90deg, #00ffcc, #ff00cc);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+.wallet-card { background: linear-gradient(135deg, #1e0033, #002244); border-radius: 24px; padding: 3rem 2.5rem; text-align: center; max-width: 500px; margin: 2rem auto; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); }
+.big-balance { font-size: 4.5rem; font-weight: 700; margin: 1rem 0; }
+.pi-symbol { color: #ffcc00; margin-right: 8px; }
 
-.tagline {
-    font-size: 1.35rem;
-    max-width: 600px;
-    margin: 0 auto 2rem;
-    opacity: 0.9;
-}
+.form-container { max-width: 480px; margin: 3rem auto; background: rgba(255,255,255,0.1); padding: 2.5rem; border-radius: 24px; backdrop-filter: blur(10px); }
+.input-group { margin-bottom: 1.5rem; }
+.input-group label { display: block; margin-bottom: 8px; opacity: 0.85; }
+.amount-input { display: flex; background: rgba(0,0,0,0.3); border-radius: 12px; overflow: hidden; }
+.amount-input select, .amount-input input { background: transparent; border: none; padding: 16px; color: white; font-size: 1.1rem; }
+.amount-input input { flex: 1; }
 
-.cta-buttons button {
-    padding: 14px 32px;
-    margin: 0 10px;
-    border: none;
-    border-radius: 50px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.btn-primary {
-    background: linear-gradient(90deg, #00ffcc, #0099ff);
-    color: #000;
-    font-weight: 700;
-}
-
-.btn-secondary {
-    background: rgba(255,255,255,0.15);
-    color: white;
-    border: 1px solid rgba(255,255,255,0.3);
-}
-
-.btn-primary:hover, .btn-secondary:hover {
-    transform: translateY(-4px);
-}
-
-.full-btn {
-    width: 100%;
-    padding: 16px;
-    font-size: 1.2rem;
-}
-
-/* Features */
-.features {
-    padding: 3rem 2rem;
-    text-align: center;
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.feature-card {
-    background: rgba(255,255,255,0.08);
-    padding: 2rem 1.5rem;
-    border-radius: 20px;
-    transition: transform 0.3s;
-}
-
-.feature-card:hover {
-    transform: translateY(-10px);
-}
-
-.feature-card i {
-    font-size: 2.8rem;
-    margin-bottom: 1rem;
-    color: #00ffcc;
-}
-
-/* Wallet */
-.wallet-card {
-    background: linear-gradient(135deg, #1e0033, #002244);
-    border-radius: 24px;
-    padding: 3rem 2.5rem;
-    text-align: center;
-    max-width: 500px;
-    margin: 2rem auto;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-}
-
-.big-balance {
-    font-size: 4.5rem;
-    font-weight: 700;
-    margin: 1rem 0;
-}
-
-.pi-symbol {
-    color: #ffcc00;
-    margin-right: 8px;
-}
-
-/* Forms */
-.form-container {
-    max-width: 480px;
-    margin: 3rem auto;
-    background: rgba(255,255,255,0.1);
-    padding: 2.5rem;
-    border-radius: 24px;
-    backdrop-filter: blur(10px);
-}
-
-.input-group {
-    margin-bottom: 1.5rem;
-}
-
-.input-group label {
-    display: block;
-    margin-bottom: 8px;
-    opacity: 0.85;
-}
-
-.amount-input {
-    display: flex;
-    background: rgba(0,0,0,0.3);
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-.amount-input select, .amount-input input {
-    background: transparent;
-    border: none;
-    padding: 16px;
-    color: white;
-    font-size: 1.1rem;
-}
-
-.amount-input input {
-    flex: 1;
-}
-
-/* Toast */
-.toast {
-    position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #00cc88;
-    color: #000;
-    padding: 14px 28px;
-    border-radius: 50px;
-    font-weight: 600;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    display: none;
-    z-index: 1000;
-}
+.toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background: #00cc88; color: #000; padding: 14px 28px; border-radius: 50px; font-weight: 600; box-shadow: 0 10px 30px rgba(0,0,0,0.3); display: none; z-index: 1000; }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        
-  https://sdk.minepi.com/pi-sdk.js
-
-https://sdk.minepi.com/pi-sdk.js
-script>
-Pi.init({ version: "2.0" });
-
-async function login() {
-  try {
-    const scopes = ['username', 'payments'];
-    const auth = await Pi.authenticate(scopes);
-    alert("Welcome " + auth.user.username);
-  } catch (err) {
-    console.log(err);
-  }
+    .nav-links { display: none; }
 }
-</script>
-</body>
-</html>
 
-js
-const express = require('express');
-const app = express();
-
-app.get('/', (req, res) => {
-  res.send('GlobalPay Pi Backend Running');
-});
-
-app.listen(3000, () => {
-  console.log('Server running on port 3000');
-});
-
-globalpay-pi/
-├── frontend/
-│   ├── index.html
-│   └── app.js
-├── backend/
-│   ├── server.js
-│   └── package.json
-└── README.md
-https://sdk.minepi.com/pi-sdk.js
-
-https://sdk.minepi.com/pi-sdk.js
-script>
-Pi.init({ version: "2.0" });
-
-async function login() {
-  try {
-    const scopes = ['username', 'payments'];
-    const auth = await Pi.authenticate(scopes);
-    alert("Welcome " + auth.user.username);
-  } catch (err) {
-    console.log(err);
-  }
-}
-</script>
-</body>
-</html>
-
-js
-const express = require('express');
-const app = express();
-
-app.get('/', (req, res) => {
-  res.send('GlobalPay Pi Backend Running');
-});
-
-app.listen(3000, () => {
-  console.log('Server running on port 3000');
-});
-
-globalpay-pi/
-├── frontend/
-│   ├── index.html
-│   └── app.js
-├── backend/
-│   ├── server.js
-│   └── package.json
-└── README.md
-    https://pi-apps.github.io/pi-sdk-docs/quick-start/genai/Authentication.
+/* Simple vendor card style */
+.vendor-card { background: rgba(255,255,255,0.05); padding: 1.25rem; border-radius: 12px; text-align: center; }
+.transaction-item, .history-item { background: rgba(255,255,255,0.03); padding: 12px; border-radius: 10px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }

@@ -1,0 +1,5 @@
+# Ignore common artifacts
+node_modules/
+.env
+.DS_Store
+validation-key.txt
