@@ -1,5 +1,8 @@
 # Ignore common artifacts
 node_modules/
 .env
+.env.local
 .DS_Store
 validation-key.txt
+.vercel/
+*.log

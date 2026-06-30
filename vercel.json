@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "public": true,
+  "buildCommand": "echo 'Static site - no build needed'",
+  "outputDirectory": ".",
+  "env": {
+    "VERCEL_PROJECT_NAME": "globalpay-pi",
+    "PI_NETWORK_SANDBOX": true
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
+}
