@@ -1,0 +1,35 @@
+{
+  "projectName": "globalpay-pi",
+  "framework": "html",
+  "buildCommand": "echo 'Build complete'",
+  "outputDirectory": "./",
+  "publicSource": "./",
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "destination": "/index.html"
+    }
+  ],
+  "env": {
+    "GITHUB_CLIENT_ID": "@github_client_id",
+    "GITHUB_CLIENT_SECRET": "@github_client_secret",
+    "NEXTAUTH_URL": "https://globalpay-pi.vercel.app",
+    "NEXTAUTH_SECRET": "@nextauth_secret",
+    "GITHUB_API_TOKEN": "@github_api_token"
+  },
+  "productionBranch": "main",
+  "previewBranches": [
+    "deploy/auth-setup"
+  ],
+  "deploymentNotes": {
+    "description": "GlobalPay Pi - Pi Network Payment Application",
+    "authentication": "GitHub OAuth via NextAuth.js",
+    "features": [
+      "User authentication with GitHub",
+      "Wallet management",
+      "Transaction history",
+      "Multi-vendor support",
+      "Payment processing"
+    ]
+  }
+}
