@@ -1,4 +1,1 @@
-REDACTED
-
-This file previously contained a validation key that has been removed from the repository to avoid accidental leakage.
-If this key was in use by any service, rotate it immediately and update your production configuration to use a secret manager or environment variable.
+GLOBALPAY-/blob/43cf3e846702e9f4b8b53ee6ba0aec046904672d/index.html#L8
