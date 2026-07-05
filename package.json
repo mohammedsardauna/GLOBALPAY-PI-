@@ -1,0 +1,27 @@
+{
+  "name": "globalpay-pi",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "prisma:migrate": "prisma migrate dev --name init",
+    "prisma:generate": "prisma generate"
+  },
+  "dependencies": {
+    "next": "14.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "next-auth": "4.24.0",
+    "@next-auth/prisma-adapter": "1.0.5",
+    "@prisma/client": "5.4.0",
+    "pi-backend": "^1.0.0"
+  },
+  "devDependencies": {
+    "prisma": "5.4.0",
+    "typescript": "5.1.6",
+    "@types/react": "18.2.21",
+    "@types/node": "20.4.2"
+  }
+}

@@ -1,13 +1,14 @@
 import NextAuth from "next-auth"
 import GithubProvider from "next-auth/providers/github"
+import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import type { NextAuthOptions } from "next-auth"
+import { prisma } from "../../../lib/prisma"
 
 const PiProvider = {
   id: "pi",
   name: "Pi Network",
   type: "oauth",
   version: "2.0",
-  // Either set PI_WELL_KNOWN to an OpenID Connect discovery URL, or set the endpoints below
   wellKnown: process.env.PI_WELL_KNOWN || undefined,
   authorization: {
     url: process.env.PI_AUTHORIZATION_URL || "https://minepi.com/oauth/authorize",
@@ -18,7 +19,6 @@ const PiProvider = {
   clientId: process.env.PI_CLIENT_ID || "",
   clientSecret: process.env.PI_CLIENT_SECRET || "",
   profile(profile: any) {
-    // Map Pi provider profile to NextAuth user
     return {
       id: profile.id || profile.sub || profile.user_id,
       name: profile.name || profile.username || profile.displayName,
@@ -29,23 +29,22 @@ const PiProvider = {
 }
 
 const options: NextAuthOptions = {
+  adapter: PrismaAdapter(prisma),
   providers: [
     GithubProvider({
       clientId: process.env.GITHUB_CLIENT_ID || "",
       clientSecret: process.env.GITHUB_CLIENT_SECRET || "",
     }),
-    // custom Pi provider
     PiProvider as any,
   ],
   secret: process.env.NEXTAUTH_SECRET,
   session: {
-    strategy: "jwt",
+    strategy: "database",
   },
   callbacks: {
-    async session({ session, token }) {
-      if (token?.sub) {
-        (session.user as any).id = token.sub
-      }
+    async session({ session, token, user }) {
+      // attach user.id to session
+      (session.user as any).id = user?.id || token?.sub
       return session
     },
   },
